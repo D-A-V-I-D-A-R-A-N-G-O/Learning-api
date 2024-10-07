@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "name": "david",
+    "correo": "pepe@gmail.com"
+  },
+  {
+    "id": 2,
+    "name": "berna",
+    "correo": "leon@gmail.com"
+  },
+  {
+    "id": 2,
+    "name": "peppe",
+    "correos": [
+      "pppe@gmail.com",
+      "pppe2@gmail.com"
+    ]
+  },
+  {
+    "id": 3
+  },
+  {
+    "id": 4
+  },
+  {
+    "id": 5,
+    "nombre": "johan",
+    "correo": "johan@gmail.com"
+  }
+]
