@@ -2,7 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const router = express.Router();
-const filePath = path.join(__dirname, '../data/Users.json');
+const filePath = path.join(__dirname, '../data/users.json');
 
 // Método para leer los usuarios del archivo users.json
 const getUsers = () => {
@@ -37,8 +37,9 @@ router.post('/', (req, res) => {
     const users = getUsers();
     const newUser = {
         id: users.length ? users[users.length - 1].id + 1 : 1,
-        nombre: req.body.nombre,
-        correo: req.body.correo
+        name: req.body.name,
+        email: req.body.email,
+        tasks: req.body.tasks
     };
     users.push(newUser);
     saveUsers(users);

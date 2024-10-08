@@ -2,30 +2,29 @@
   {
     "id": 1,
     "name": "david",
-    "correo": "pepe@gmail.com"
+    "email": "pepe@gmail.com"
   },
   {
     "id": 2,
     "name": "berna",
-    "correo": "leon@gmail.com"
+    "email": "leon@gmail.com"
   },
   {
     "id": 2,
     "name": "peppe",
-    "correos": [
+    "email": [
       "pppe@gmail.com",
       "pppe2@gmail.com"
     ]
   },
   {
-    "id": 3
-  },
-  {
-    "id": 4
-  },
-  {
     "id": 5,
-    "nombre": "johan",
-    "correo": "johan@gmail.com"
+    "name": "johan",
+    "email": "johan@gmail.com"
+  },
+  {
+    "id": 6,
+    "name": "elber",
+    "email": "elberbarlaga@gmail.com"
   }
 ]
