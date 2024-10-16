@@ -38,8 +38,10 @@ router.post('/', (req, res) => {
     const newTask = {
         id: Tasks.length ? Tasks[Tasks.length - 1].id + 1 : 1,
         name: req.body.name,
-        email: req.body.email,
-        tasks: req.body.tasks
+        taskTypeId: req.body.taskTypeId,
+        taskLimit: req.body.taskLimit,
+        description: req.body.description,
+        
     }
     Tasks.push(newTask);
     saveTasks(Tasks);

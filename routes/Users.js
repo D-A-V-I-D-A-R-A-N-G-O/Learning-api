@@ -15,10 +15,10 @@ const saveUsers = (users) => {
     fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
 };
 
-// Ruta para consultar los usuarios
-router.get('/', (req, res) => {
-    const users = getUsers();
-    res.json(users);
+ // Ruta para consultar los usuarios
+ router.get('/', (req, res) => {
+     const users = getUsers();
+     res.json(users);
 });
 
 // Obtener usuario por su id
@@ -55,7 +55,8 @@ router.put('/:id', (req, res)=>{
         users[userIndex]={
             ...users[userIndex],
         name: req.body.name || users[userIndex].name,
-        email: req.body.email || users[userIndex].email
+        email: req.body.email || users[userIndex].email,
+        tasks: req.body.tasks || users[userIndex].tasks
         }
         saveUsers(users)
         res.json(users[userIndex])
