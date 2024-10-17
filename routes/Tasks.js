@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
 // Obtener tarea por su id
 router.get('/:id', (req, res) => {
     const tasks = getTasks();
-    const task = tasks.find(t => t.id === parseInt(req.params.id));
+    const task = tasks.find(u => u.id === parseInt(req.params.id));
     if (task) {
         res.json(task);
     } else {

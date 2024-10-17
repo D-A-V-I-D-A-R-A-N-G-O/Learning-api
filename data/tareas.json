@@ -1,9 +1,12 @@
-{
-    "id": 1,
-    "taskTypeId": 1,
-    "taskLimit": 2,
-    "description": "peppe",
-    "taskSubject":  2,
-    "myDifficulty":  10,
-    "totalDifficulty": 8  
-}
+[
+    {
+      "id": 1,
+      "taskTypeId": 1,
+      "taskLimit": "2024-12-31",
+      "description": "Descripción de la tarea",
+      "taskSubject": "Matemáticas",
+      "myDifficulty": 2,
+      "totalDifficulty": 3
+    }
+  ]
+  
