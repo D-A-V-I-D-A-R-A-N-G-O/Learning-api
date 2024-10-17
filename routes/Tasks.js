@@ -2,7 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const router = express.Router();
-const filePath = path.join(__dirname, '../data/tasks.json');
+const filePath = path.join(__dirdescription, '../data/tasks.json');
 
 // Método para leer los usuarios del archivo Tasks.json
 const getTasks = () => {
@@ -37,10 +37,12 @@ router.post('/', (req, res) => {
     const Tasks = getTasks();
     const newTask = {
         id: Tasks.length ? Tasks[Tasks.length - 1].id + 1 : 1,
-        name: req.body.name,
         taskTypeId: req.body.taskTypeId,
         taskLimit: req.body.taskLimit,
         description: req.body.description,
+        taskSubject:  req.body.taskSubject,
+        myDifficulty:  req.body.myDifficulty,
+        totalDifficulty:   req.body.totalDifficulty
         
     }
     Tasks.push(newTask);
@@ -56,26 +58,30 @@ router.put('/:id', (req, res)=>{
     if (TAnewTaskIndex !== -1) {
         Tasks[TAnewTaskIndex]={
             ...Tasks[TAnewTaskIndex],
-        name: req.body.name || Tasks[TAnewTaskIndex].name,
-        email: req.body.email || Tasks[TAnewTaskIndex].email
+        description: req.body.description || Tasks[TAnewTaskIndex].description,
+        taskLimit: req.body.taskLimit || Tasks[TAnewTaskIndex].taskLimit,
+        taskTypeId: req.body.taskTypeId || Tasks[TAnewTaskIndex].taskTypeId,
+        taskSubject: req.body.taskSubject || Tasks[TAnewTaskIndex].taskSubject,
+        myDifficulty: req.body.myDifficulty || Tasks[TAnewTaskIndex].myDifficulty,
+        totalDifficulty: req.body.totalDifficulty || Tasks[TAnewTaskIndex].totalDifficulty
         }
         saveTasks(Tasks)
         res.json(Tasks[TAnewTaskIndex])
     } else {
-        res.status(404).json({message: "hay chamo, ese man no existe"})
+        res.status(404).json({message: "hay chamo, esa tarea no existe"})
     }
 })
 
-//Eliminar o borrar un usuario por id
+//Eliminar o borrar una tarea por id
 router.delete('/:id', (req, res)=>{
     const Tasks = getTasks()
     const newTasks = Tasks.filter(u => u.id !== parseInt(req.params.id))
 
     if (newTasks.length !== Tasks.length) {
         saveTasks(newTasks)
-        res.json({message: "sujeto eliminado exitosamente 👌 "})
+        res.json({message: "tarea eliminada exitosamente 👌 "})
     } else {
-        res.status(404).json({message: "no chamo, no lo puede eliminar"})
+        res.status(404).json({message: "no chamo, no se púede eliminar"})
     }
 
 })
