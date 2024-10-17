@@ -28,7 +28,7 @@ router.get('/:id', (req, res) => {
     if (subject) {
         res.json(subject);
     } else {
-        res.status(404).json({ message: "Ese usuario no existe parcero, pailas" });
+        res.status(404).json({ message: "Esea materia no existe parcero, pailas" });
     }
 });
 

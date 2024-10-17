@@ -1,0 +1,9 @@
+{
+    "id": 1,
+    "taskTypeId": 1,
+    "taskLimit": 2,
+    "description": "peppe",
+    "taskSubject":  2,
+    "myDifficulty":  10,
+    "totalDifficulty": 8  
+}
